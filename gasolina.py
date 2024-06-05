@@ -1,3 +1,4 @@
+# código de geração do gráfico 
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -9,9 +10,9 @@ data = pd.read_csv("gasolina.csv")
 
 with sns.axes_style("darkgrid"):
   grafico = sns.lineplot(data=data, x="dia", y="venda")
-  grafico.set(title="Evolução do preço do combustível ao longo dos dias", xlabel="Dias", ylabel="Preço (R$)")
+  grafico.set(title="Preço do combustível VS 10 primeiros dias de Julho de 2021", xlabel="Dias de Julho de 2021", ylabel="Preço em Reais")
   grafico.set_xticks(data["dia"])
   grafico.set_xlim(1, data["dia"].max())
   
   #Salvando o Gráfico em um arquivo PNG
-  plt.savefig("Grafico_dias_x_preco_gasolina_sp.png", dpi=350, bbox_inches="tight")
+  plt.savefig("Preco_do_combustivel_VS_10_primeiros_dias_de_Julho_de_2021.png", dpi=350, bbox_inches="tight")
